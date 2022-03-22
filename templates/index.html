@@ -8,12 +8,16 @@
     <div class="content">
         <h1 style="text-align">Cửa hàng Tùng Thái</h1>
         {% if tasks|length < 1%}
-        <h4 style="text-align: center">Không có khách hàng nào, ghi ở bên dưới</h4>
+        <h4 style="text-align: center">Không có khách hàng nào, nhập ở bên dưới</h4>
         {% else %}
         <table>
             <tr>
                 <th>Khách hàng</th>
-                <th>Nội dung giao dịch</th>
+                <th>Giao dịch</th>
+                <th>Đơn vị tính</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <Th>Thành tiền</Th>
                 <th>Ngày GD cuối cùng</th>
                 <th>Xóa/Cập Nhật</th>
             </tr>
@@ -21,6 +25,10 @@
                 <tr>
                     <td>{{task.khachhang}}</td>
                     <td>{{task.content}}</td>
+                    <td>{{task.donvi}}</td>
+                    <td>{{task.dongia}}</td>
+                    <td>{{task.soluong}}</td>
+                    <td>{{task.thanhtien}}</td>
                     <td>{{task.date_created.date()}}</td>
 
                     <td>
@@ -37,6 +45,11 @@
                 <input type="text" name="content1" id="content1" placeholder="Nhập các mặt hàng lấy">
                 <br>
                 <br>
+                <input type="text" name="donvi" id="donvi" placeholder="Nhập đơn vị">
+                <input type="number" name="dongia" id="dongia" placeholder="Nhập đơn giá">
+                <br>
+                <br>
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập số lượng">
                 <input type="submit" value="Thêm khách hàng">
             </form>
         </div>
