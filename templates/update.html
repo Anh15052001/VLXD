@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head  %}
+    <title>Cập nhật</title>
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1 style="text-align">Update Task</h1>
+
+        <div class="form">
+<!--  form action là đang ở trang web nào          -->
+            <form action="/update/{{task.id}}" method="POST">
+                <input type="text" name="khachhang" id="khachhang" value="{{task.khachhang}}">
+                <input type="text" name="content1" id="content1" value="{{task.content}}">
+                <br>
+                <br>
+                <input type="submit" value="Cập nhật">
+            </form>
+        </div>
+    </div>
+{% endblock %}
